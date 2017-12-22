@@ -13,14 +13,14 @@ package RDF::Trine::Node::Resource {
 	sub abs { return $_[0]->uri }
 }
 
-package Attean::Literal {
-	sub has_datatype { return 1 }
+package RDF::Trine::Node::Literal {
+#	sub has_datatype { return 1 }
 
-	sub literal_value { return $_[0]->value }
+	sub value { return $_[0]->literal_value }
 
-	sub literal_value_language { return $_[0]->language }
+	sub language { return $_[0]->literal_value_language }
 
-	sub literal_datatype { return $_[0]->datatype->as_string }
+	sub datatype { return $_[0]->literal_datatype }
 }
 
 1;
@@ -50,15 +50,15 @@ are:
 
 =over
 
-=item * C<Attean::IRI::abs>
+=item * C<RDF::Trine::Node::Resource::abs>
 
-=item * C<Attean::Literal::literal_value>
+=item * C<RDF::Trine::Node::Literal::literal_value>
 
-=item * C<Attean::Literal::literal_value_language>
+=item * C<RDF::Trine::Node::Literal::literal_value_language>
 
-=item * C<Attean::Literal::has_datatype>
+=item * C<RDF::Trine::Node::Literal::has_datatype>
 
-=item * C<Attean::Literal::literal_datatype>
+=item * C<RDF::Trine::Node::Literal::literal_datatype>
 
 =back
 
