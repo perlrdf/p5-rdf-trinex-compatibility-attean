@@ -50,9 +50,7 @@ are:
 
 =over
 
-=item * C<Attean::Blank::blank_identifier>
-
-=item * C<Attean::IRI::uri>
+=item * C<Attean::IRI::abs>
 
 =item * C<Attean::Literal::literal_value>
 
