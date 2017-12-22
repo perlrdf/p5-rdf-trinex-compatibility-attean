@@ -9,12 +9,8 @@ our $VERSION   = '0.001';
 
 use Attean;
 
-package Attean::IRI {
-	sub uri { return $_[0]->abs }
-}
-
-package Attean::Blank {
-  sub blank_identifier { return $_[0]->value }
+package RDF::Trine::Node::Resource {
+	sub abs { return $_[0]->uri }
 }
 
 package Attean::Literal {
