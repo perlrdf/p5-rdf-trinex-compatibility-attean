@@ -56,11 +56,18 @@ are:
 
 =item * C<RDF::Trine::Node::Literal::literal_value_language>
 
-=item * C<RDF::Trine::Node::Literal::has_datatype>
-
 =item * C<RDF::Trine::Node::Literal::literal_datatype>
 
 =back
+
+=head1 TODO
+
+I'm unsure on how C<RDF::Trine::Node::Literal::has_datatype> should be
+treated. Attean implements RDF 1.1, where all literals have a
+datatype, so to Attean, C<has_datatype> would always be true, but that
+would be surprising to Trine users.
+
+
 
 =head1 BUGS
 
