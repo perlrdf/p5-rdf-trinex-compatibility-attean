@@ -2,7 +2,6 @@
 
 use strict;
 use Test::More;
-use Attean::RDF qw(iri);
 
 use_ok('RDF::TrineX::Compatibility::Attean');
 
