@@ -15,13 +15,23 @@ package RDF::Trine::Node::Resource {
 };
 
 package RDF::Trine::Node::Literal {
-  #	sub has_datatype { return 1 }
   
   sub value { return $_[0]->literal_value }
   
   sub language { return $_[0]->literal_value_language }
   
-  sub datatype { return $_[0]->literal_datatype }
+  sub datatype { # A bit of extra logic to support RDF 1.1 semantics
+	 my $self = shift;
+	 if ($self->has_datatype) {
+		return $self->literal_datatype;
+	 } else {
+		if ($self->has_language) {
+		  return 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString';
+		} else {
+		  return 'http://www.w3.org/2001/XMLSchema#string';
+		}
+	 }
+  }
 };
 
 package RDF::Trine::Model {
