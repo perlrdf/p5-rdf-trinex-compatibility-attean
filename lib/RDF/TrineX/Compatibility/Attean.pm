@@ -23,6 +23,14 @@ package RDF::Trine::Node::Literal {
   sub datatype { return $_[0]->literal_datatype }
 };
 
+package RDF::Trine::Model {
+
+  sub get_quads {
+	 my $self = shift;
+	 return $self->get_statements(@_);
+  }
+
+};
   
 1;
 
