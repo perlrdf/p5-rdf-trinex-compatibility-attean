@@ -10,6 +10,11 @@ our $VERSION   = '0.001_01';
 
 use RDF::Trine;
 
+package RDF::Trine::Node {
+  sub equals { return shift->equal(@_); }
+};
+
+
 package RDF::Trine::Node::Resource {
   sub abs { return $_[0]->uri }
 };
@@ -76,6 +81,8 @@ are added to the respective L<RDF::Trine> nodes by this module. They
 are:
 
 =over
+
+=item * C<RDF::Trine::Node::equals>
 
 =item * C<RDF::Trine::Node::Resource::abs>
 
