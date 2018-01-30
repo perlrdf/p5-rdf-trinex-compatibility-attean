@@ -9,6 +9,7 @@ our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.001';
 
 use Attean;
+use Attean::IRI;
 
 package RDF::Trine::Node::Resource {
   sub abs { return $_[0]->uri }
@@ -22,15 +23,17 @@ package RDF::Trine::Node::Literal {
   
   sub datatype { # A bit of extra logic to support RDF 1.1 semantics
 	 my $self = shift;
+	 my $string;
 	 if ($self->has_datatype) {
-		return $self->literal_datatype;
+		$string = $self->literal_datatype;
 	 } else {
 		if ($self->has_language) {
-		  return 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString';
+		  $string = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString';
 		} else {
-		  return 'http://www.w3.org/2001/XMLSchema#string';
+		  $string = 'http://www.w3.org/2001/XMLSchema#string';
 		}
 	 }
+	 return Attean::IRI->new($string);
   }
 };
 
