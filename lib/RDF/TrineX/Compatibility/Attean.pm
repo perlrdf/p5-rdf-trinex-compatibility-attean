@@ -10,19 +10,20 @@ our $VERSION   = '0.001';
 use Attean;
 
 package RDF::Trine::Node::Resource {
-	sub abs { return $_[0]->uri }
-}
+  sub abs { return $_[0]->uri }
+};
 
 package RDF::Trine::Node::Literal {
-#	sub has_datatype { return 1 }
+  #	sub has_datatype { return 1 }
+  
+  sub value { return $_[0]->literal_value }
+  
+  sub language { return $_[0]->literal_value_language }
+  
+  sub datatype { return $_[0]->literal_datatype }
+};
 
-	sub value { return $_[0]->literal_value }
-
-	sub language { return $_[0]->literal_value_language }
-
-	sub datatype { return $_[0]->literal_datatype }
-}
-
+  
 1;
 
 __END__
