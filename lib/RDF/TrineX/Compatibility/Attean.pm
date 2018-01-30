@@ -43,6 +43,11 @@ package RDF::Trine::Model {
 	 return $self->get_statements(@_);
   }
 
+  sub count_quads {
+	 my $self = shift;
+	 return $self->count_statements(@_);
+  }
+
 };
   
 1;
@@ -81,6 +86,8 @@ are:
 =item * C<RDF::Trine::Node::Literal::datatype>
 
 =item * C<RDF::Trine::Model::get_quads>
+
+=item * C<RDF::Trine::Model::count_quads>
 
 =back
 
