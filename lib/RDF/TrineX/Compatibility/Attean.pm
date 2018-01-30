@@ -33,7 +33,7 @@ package RDF::Trine::Node::Literal {
 		  $string = 'http://www.w3.org/2001/XMLSchema#string';
 		}
 	 }
-	 return Attean::IRI->new($string);
+	 return Attean::IRI->new($string); # This is what people expect, right?
   }
 };
 
