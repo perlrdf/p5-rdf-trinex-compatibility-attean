@@ -4,5 +4,5 @@ use Test::Perl::Critic(-exclude => [
 											   'RequireExtendedFormatting',
 											   'ProhibitExcessComplexity',
 											  ],
-							  -severity => 3);
+							  -severity => 5);
 all_critic_ok();
