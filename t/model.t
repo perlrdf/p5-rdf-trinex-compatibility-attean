@@ -22,7 +22,7 @@ isa_ok($iter, 'RDF::Trine::Iterator');
 ok(my $row = $iter->next, 'Got an element from the iterator');
 ok(my $lit = $row->object, 'Got the object');
 is($lit->value, 3.14, 'Value roundtripped');
-isa_ok($lit->datatype, 'Attean::IRI');
+isa_ok($lit->datatype, 'RDF::Trine::Node::Resource');
 is($lit->datatype->value, 'http://www.w3.org/2001/XMLSchema#decimal', 'datatype roundtripped');
 
 

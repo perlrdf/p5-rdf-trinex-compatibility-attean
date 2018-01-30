@@ -16,7 +16,7 @@ subtest 'plain literal string' => sub {
   my $lit = RDF::Trine::Node::Literal->new('Dahut');
 
   is($lit->value, 'Dahut', 'Value roundtripped');
-  isa_ok($lit->datatype, 'Attean::IRI');
+  isa_ok($lit->datatype, 'RDF::Trine::Node::Resource');
   is($lit->datatype->value, 'http://www.w3.org/2001/XMLSchema#string', 'Datatype ok');
 };
 
@@ -25,7 +25,7 @@ subtest 'language string literal' => sub {
 
   is($lit->value, 'Dahut', 'Value roundtripped');
   is($lit->language, 'fr', 'Language roundtripped');
-  isa_ok($lit->datatype, 'Attean::IRI');
+  isa_ok($lit->datatype, 'RDF::Trine::Node::Resource');
   is($lit->datatype->value, 'http://www.w3.org/1999/02/22-rdf-syntax-ns#langString', 'Datatype OK')
 };
 
@@ -33,7 +33,7 @@ subtest 'datatype literal' => sub {
   my $lit = RDF::Trine::Node::Literal->new('42', undef, 'http://www.w3.org/2001/XMLSchema#integer');
 
   is($lit->value, '42', 'Value roundtripped');
-  isa_ok($lit->datatype, 'Attean::IRI');
+  isa_ok($lit->datatype, 'RDF::Trine::Node::Resource');
   is($lit->datatype->value, 'http://www.w3.org/2001/XMLSchema#integer', 'datatype roundtripped');
 };
 

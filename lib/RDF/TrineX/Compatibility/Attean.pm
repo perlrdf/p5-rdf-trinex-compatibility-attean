@@ -8,8 +8,7 @@ no warnings 'redefine';
 our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.001_01';
 
-use Attean;
-use Attean::IRI;
+use RDF::Trine;
 
 package RDF::Trine::Node::Resource {
   sub abs { return $_[0]->uri }
@@ -33,7 +32,7 @@ package RDF::Trine::Node::Literal {
 		  $string = 'http://www.w3.org/2001/XMLSchema#string';
 		}
 	 }
-	 return Attean::IRI->new($string); # This is what people expect, right?
+	 return RDF::Trine::Node::Resource->new($string);
   }
 };
 
@@ -95,9 +94,6 @@ this only at the output level, i.e. the
 C<RDF::Trine::Node::Literal::datatype> will return the RDF 1.1
 datatypes, but C<has_datatype> is still false for what was in RDF 1.0
 plain literals and language literals.
-
-C<RDF::Trine::Node::Literal::datatype> now returns an L<Attean::IRI>
-object. I'm unsure if that is the least surprising.
 
 =head1 BUGS
 
