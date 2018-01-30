@@ -3,6 +3,7 @@ use strict;
 use warnings;
 
 package RDF::TrineX::Compatibility::Attean;
+no warnings 'redefine';
 
 our $AUTHORITY = 'cpan:KJETILK';
 our $VERSION   = '0.001';
