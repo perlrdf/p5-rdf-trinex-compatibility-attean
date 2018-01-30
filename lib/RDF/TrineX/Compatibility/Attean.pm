@@ -6,7 +6,7 @@ package RDF::TrineX::Compatibility::Attean;
 no warnings 'redefine';
 
 our $AUTHORITY = 'cpan:KJETILK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.001_01';
 
 use Attean;
 use Attean::IRI;
