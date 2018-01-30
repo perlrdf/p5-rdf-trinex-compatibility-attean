@@ -75,11 +75,13 @@ are:
 
 =item * C<RDF::Trine::Node::Resource::abs>
 
-=item * C<RDF::Trine::Node::Literal::literal_value>
+=item * C<RDF::Trine::Node::Literal::value>
 
-=item * C<RDF::Trine::Node::Literal::literal_value_language>
+=item * C<RDF::Trine::Node::Literal::language>
 
-=item * C<RDF::Trine::Node::Literal::literal_datatype>
+=item * C<RDF::Trine::Node::Literal::datatype>
+
+=item * C<RDF::Trine::Model::get_quads>
 
 =back
 
@@ -88,13 +90,24 @@ are:
 I'm unsure on how C<RDF::Trine::Node::Literal::has_datatype> should be
 treated. Attean implements RDF 1.1, where all literals have a
 datatype, so to Attean, C<has_datatype> would always be true, but that
-would be surprising to Trine users.
+would be surprising to Trine users. For now, I have chosen to solve
+this only at the output level, i.e. the
+C<RDF::Trine::Node::Literal::datatype> will return the RDF 1.1
+datatypes, but C<has_datatype> is still false for what was in RDF 1.0
+plain literals and language literals.
 
-
+C<RDF::Trine::Node::Literal::datatype> now returns an L<Attean::IRI>
+object. I'm unsure if that is the least surprising.
 
 =head1 BUGS
 
-Please report any bugs or things you miss from L<Attean> here:
+One should be that this module is a hack to make legacy code run while
+being in transition to L<Attean>. It was initially motivated by making
+L<RDF::RDFa::Generator> run on both frameworks. It may do surprising
+things.
+
+Nevertheless, please report any bugs or things you miss from L<Attean>
+here:
 L<https://github.com/kjetilk/p5-rdf-trinex-compatibility-attean/issues>.
 
 =head1 SEE ALSO
