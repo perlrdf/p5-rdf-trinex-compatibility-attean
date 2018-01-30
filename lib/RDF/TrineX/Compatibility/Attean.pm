@@ -76,8 +76,8 @@ In modules that have new L<Attean> methods, but otherwise uses L<RDF::Trine>, ju
 
 =head1 DESCRIPTION
 
-For now, only certain methods of L<Attean> nodes are supported. They
-are added to the respective L<RDF::Trine> nodes by this module. They
+For now, only certain methods of L<Attean> classes are supported. They
+are added to the respective L<RDF::Trine> classes by this module. They
 are:
 
 =over
