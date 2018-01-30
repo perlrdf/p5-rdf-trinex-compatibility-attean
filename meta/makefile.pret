@@ -3,7 +3,8 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `RDF-TrineX-Compatibility-Attean`
-	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
-	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
-	.
+    :test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
+    :runtime-requirement    [ :on "RDF::Trine"^^:CpanId ];
+    :develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
+    .
 
