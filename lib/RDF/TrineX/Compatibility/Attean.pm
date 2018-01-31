@@ -11,6 +11,9 @@ our $VERSION   = '0.001_01';
 use RDF::Trine;
 
 package RDF::Trine::Node {
+
+  sub ntriples_string { return $_[0]->as_ntriples }
+	 
   sub equals { return shift->equal(@_); }
 };
 
@@ -83,6 +86,8 @@ are:
 =over
 
 =item * C<RDF::Trine::Node::equals>
+
+=item * C<RDF::Trine::Node::ntriples_string>
 
 =item * C<RDF::Trine::Node::Resource::abs>
 
