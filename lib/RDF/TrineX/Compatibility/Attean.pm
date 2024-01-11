@@ -116,10 +116,10 @@ plain literals and language literals.
 
 =head1 BUGS
 
-One should be that this module is a hack to make legacy code run while
-being in transition to L<Attean>. It was initially motivated by making
-L<RDF::RDFa::Generator> run on both frameworks. It may do surprising
-things.
+One should be aware that this module is a hack to make legacy code run
+while being in transition to L<Attean>. It was initially motivated by
+making L<RDF::RDFa::Generator> run on both frameworks. It may do
+surprising things.
 
 Nevertheless, please report any bugs or things you miss from L<Attean>
 here:
